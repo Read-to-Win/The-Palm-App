@@ -5,6 +5,8 @@ import VendorHome from "./pages/vendor/VendorHome";
 import DashboardLayout from "./layouts/DashboardLayout";
 import VendorAds from "./pages/vendor/VendorAds";
 import CreateAd from "./pages/vendor/CreateAd";
+import Join from "./pages/Join";
+import SignIn from "./pages/SignIn";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,18 +23,26 @@ function App() {
       element: <DashboardLayout />,
       children: [
         {
-          index:true,
+          index: true,
           element: <VendorHome />,
         },
         {
-          path:"adverts",
-          element:<VendorAds/>,
+          path: "adverts",
+          element: <VendorAds />,
         },
         {
           path: "create-add",
-          element:<CreateAd/>,
-        }
+          element: <CreateAd />,
+        },
       ],
+    },
+    {
+      path: "/join",
+      element: <Join />,
+    },
+    {
+      path: "/sign-in",
+      element: <SignIn />,
     },
   ]);
 
