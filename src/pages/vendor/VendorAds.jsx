@@ -1,8 +1,11 @@
 import React from 'react'
+import ProductCard from '../../components/ProductCard'
 
 const VendorAds = () => {
   return (
-    <div>VendorAds</div>
+    <div>
+      <ProductCard/>
+    </div>
   )
 }
 

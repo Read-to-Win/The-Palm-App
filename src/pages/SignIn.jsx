@@ -1,4 +1,5 @@
 import formImage from "../assets/formImg.jpg";
+import { Link } from "react-router";
 
 const SignIn = () => {
   return (
@@ -17,18 +18,10 @@ const SignIn = () => {
             </h2>
             <p className="text-sm text-gray-500">
               New here?{" "}
-              <span className="text-gray-500">Join</span>
+              <span className="cursor-pointer underline font-bold text-blue-500">
+                <Link to="/join">Join</Link>
+              </span>
             </p>
-          </div>
-
-          <div>
-            <label className="block mb-1 text-sm cursor-pointer">Name:</label>
-            <input
-              type="text"
-              name="name"
-              className="border px-3 py-2 w-full rounded-2xl"
-              placeholder="e.g. Jane Doe"
-            />
           </div>
 
           <div>

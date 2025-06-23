@@ -1,4 +1,5 @@
 import { FaHome } from "react-icons/fa";
+import { IoIosNotifications } from "react-icons/io";
 import { MdCreateNewFolder } from "react-icons/md";
 import { RiAdvertisementFill } from "react-icons/ri";
 
@@ -18,6 +19,11 @@ const K = {
       icon: <MdCreateNewFolder />,
       text: "Create Advert",
       path: "/dashboard/create-add",
+    },
+    {
+      icon: <IoIosNotifications />,
+      text: "Notifications",
+      path: "/dashboard/notifications",
     },
   ],
 };
