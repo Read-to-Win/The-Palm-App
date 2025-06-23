@@ -15,6 +15,7 @@ const Navbar = () => {
             <li className="px-4 py-2 hover:bg-gray-100">Top Vendors</li>
             <li className="px-4 py-2 hover:bg-gray-100">Verified Vendors</li>
             <li className="px-4 py-2 hover:bg-gray-100">Certified Vendors</li>
+            <li className="px-4 py-2 hover:bg-gray-100">Collaboration & Payment</li>
           </ul>
         </div>
 
