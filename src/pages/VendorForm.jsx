@@ -1,0 +1,124 @@
+import formImage from "../assets/formImg.jpg";
+import { Link } from "react-router";
+
+const VendorForm = () => {
+  return (
+    <div className="flex h-screen">
+      {/* Image Section */}
+      <div className="w-1/2 h-full">
+        <img src={formImage} className="w-max h-full object-contain " />
+      </div>
+
+      {/* Form Section */}
+      <div className="min-w-4xl h-full flex items-center justify-center">
+        <form className="p-10 space-y-6 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white">
+          <div>
+            <h2 className="text-2xl font-semibold mb-1">
+              Create a new account
+            </h2>
+            <p className="text-sm text-gray-500">
+              Already have an account?{" "}
+              <span className="cursor-pointer underline font-bold text-blue-500"><Link to="/sign-in">Sign in</Link></span>
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                First Name:
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="border px-3 py-2 w-full rounded-2xl"
+                placeholder="e.g. Jane"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Last Name:
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="border px-3 py-2 w-full rounded-2xl"
+                placeholder="e.g. Doe"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Date of Birth:
+              </label>
+              <input
+                type="date"
+                name="date"
+                className="border px-3 py-2 w-full rounded-2xl"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Username:
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="border px-3 py-2 w-full rounded-2xl"
+              />
+            </div>
+
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Email:
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="border px-3 py-2 w-full rounded-2xl"
+                placeholder="e.g. preshy100@gmail.com"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Contact:
+              </label>
+              <input
+                type="number"
+                name="contact"
+                className="border px-3 py-2 w-full rounded-2xl"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Address:
+              </label>
+              <input
+                type="text"
+                name="contact"
+                className="border px-3 py-2 w-full rounded-2xl"
+              />
+            </div>
+
+            <div>
+              <label className="block mb-1 text-sm cursor-pointer">
+                Password:
+              </label>
+              <input
+                type="password"
+                name="password"
+                className="border px-3 py-2 w-full rounded-2xl"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="text-gray-500 px-6 py-2 rounded-2xl border border-orange-500 hover:bg-[#F2D5CF] transition"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default VendorForm;

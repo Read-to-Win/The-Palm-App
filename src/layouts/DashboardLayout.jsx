@@ -6,8 +6,8 @@ const DashboardLayout = () => {
   return (
     <div className="flex">
       <SideBar />
-<div className="px-20">
-      <Outlet />
+      <div className="px-10 w-full ">
+        <Outlet />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import formImage from "../assets/formImg.jpg";
+import { Link } from "react-router";
 
 const Join = () => {
   return (
@@ -16,8 +17,10 @@ const Join = () => {
               Create a new account
             </h2>
             <p className="text-sm text-gray-500">
-              Already have an account?{" "}
-              <span className="text-gray-500">Sign in</span>
+              Already have an account?
+              <span className="cursor-pointer underline font-bold text-blue-500">
+                <Link to="/sign-in">Sign in</Link>
+              </span>
             </p>
           </div>
 
@@ -42,7 +45,9 @@ const Join = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">Password:</label>
+            <label className="block mb-1 text-sm cursor-pointer">
+              Password:
+            </label>
             <input
               type="password"
               name="password"

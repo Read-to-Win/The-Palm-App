@@ -7,6 +7,9 @@ import VendorAds from "./pages/vendor/VendorAds";
 import CreateAd from "./pages/vendor/CreateAd";
 import Join from "./pages/Join";
 import SignIn from "./pages/SignIn";
+import VendorForm from "./pages/VendorForm";
+import EditForm from "./pages/EditForm";
+import Notifications from "./pages/vendor/Notifications";
 
 
 function App() {
@@ -35,6 +38,10 @@ function App() {
           path: "create-add",
           element: <CreateAd />,
         },
+        {
+          path: "notifications",
+          element: <Notifications/>,
+        },
       ],
     },
     {
@@ -44,6 +51,14 @@ function App() {
     {
       path: "/sign-in",
       element: <SignIn />,
+    },
+    {
+      path: "/venform",
+      element: <VendorForm/>
+    },
+    {
+      path: "/edit",
+      element: <EditForm/>
     },
   ]);
 
