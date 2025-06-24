@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const ProductCard = () => {
   return (
-    <div className="bg-white shadow-2xl rounded overflow-hidden w-55 mt-10 hover:">
+    <div className="bg-[#1F512F] shadow-2xl rounded overflow-hidden w-55 mt-10 hover:">
       <img
         src="https://cdn10.nnnow.com/web-images/large/styles/YXLONY4DUHN/1683610528589/1.jpg"
         alt="Product"

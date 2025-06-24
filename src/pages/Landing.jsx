@@ -1,8 +1,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import ProductCard from "../components/ProductCard";
 import PopularProducts from "../components/PopularProducts";
+import LandingProducts from "../components/LandingProducts";
+import BuyNow from "../components/BuyNow";
 
 const Landing = () => {
   return (
@@ -10,6 +11,8 @@ const Landing = () => {
       <Navbar />
       <Hero/>
       <PopularProducts/>
+      <BuyNow/>
+      <LandingProducts/>
       <Footer/>
     </div>
   );

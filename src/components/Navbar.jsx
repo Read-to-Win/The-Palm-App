@@ -10,13 +10,13 @@ const Navbar = () => {
     <div className="relative group">
       <li className="hover:text-green-600">Palm Pro</li>
 
-          {/* Dropdown menu */}
-          <ul className="absolute hidden group-hover:block bg-white shadow-md rounded mt-2 w-40 z-10">
-            <li className="px-4 py-2 hover:bg-gray-100">Top Vendors</li>
-            <li className="px-4 py-2 hover:bg-gray-100">Verified Vendors</li>
-            <li className="px-4 py-2 hover:bg-gray-100">Certified Vendors</li>
-          </ul>
-        </div>
+      {/* Dropdown menu */}
+      <ul className="absolute hidden group-hover:block bg-white shadow-md rounded mt-2 w-40 z-10">
+        <li className="px-4 py-2 hover:bg-gray-100">Top Vendors</li>
+        <li className="px-4 py-2 hover:bg-gray-100">Verified Vendors</li>
+        <li className="px-4 py-2 hover:bg-gray-100">Certified Vendors</li>
+      </ul>
+    </div>
 
     <li className="hover:text-green-600">View Products</li>
     <li className="hover:text-green-600">

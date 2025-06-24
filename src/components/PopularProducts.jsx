@@ -3,10 +3,11 @@ import { GiAmpleDress } from "react-icons/gi";
 import { GiHighHeel } from "react-icons/gi";
 import { GiConverseShoe } from "react-icons/gi";
 import { GiDelicatePerfume } from "react-icons/gi";
-import { MdOutlinePhoneAndroid } from "react-icons/md"; 
+import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { FaCouch } from "react-icons/fa";
 import { IoLogoElectron } from "react-icons/io5";
 import { FaKitchenSet } from "react-icons/fa6";
+
 
 
 const PopularProducts = () => {
@@ -52,26 +53,25 @@ const PopularProducts = () => {
         <div className="flex flex-row gap-2 font-semibold text-5xl mt-12 text-[#404145]">
           <h1>Popular </h1>
           <h1>products</h1>
-       
-       
         </div>
         <div className="grid grid-cols-6 gap-4">
-          <div className="bg-green-950 text-white font-bold">
+          <div className="bg-gray-400 text-white font-bold">
             <h1>Clothes</h1>
+      
           </div>
-          <div className="bg-green-950 text-white font-bold">
+          <div className="bg-gray-400 text-white font-bold">
             <h1>Shoes</h1>
           </div>
-          <div className="bg-green-950 text-white font-bold">
+          <div className="bg-gray-400 text-white font-bold">
             <h1>Fragrance</h1>
           </div>
-          <div className="bg-green-950 text-white font-bold">
+          <div className="bg-gray-400 text-white font-bold">
             <h1>Phones</h1>
           </div>
-          <div className="bg-green-950 text-white font-bold">
+          <div className="bg-gray-400 text-white font-bold">
             <h1>Electronics</h1>
           </div>
-          <div className="bg-green-950 text-white font-bold">
+          <div className="bg-gray-400 text-white font-bold">
             <h1>Home Appliances</h1>
           </div>
         </div>
