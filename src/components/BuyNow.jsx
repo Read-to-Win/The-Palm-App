@@ -2,7 +2,7 @@ import buyNowVideo from "../assets/add.mp4";
 
 const BuyNow = () => {
   return (
-    <div className="buyName grid grid-cols-2 text-white h-screen">
+    <div className="buyName grid grid-cols-2 text-white m-7 rounded-2xl ">
       <div className="m-3">
         <h2 className="font-bold text-[#F8240F] text-xl mb-5">Palm_Go.</h2>
         <h1 className="text-4xl">Quality Products.</h1>
