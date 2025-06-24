@@ -1,10 +1,15 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import K from "../constants";
 import { ImProfile } from "react-icons/im";
 
 const SideBar = () => {
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken")
+    navigate("/sign-in")
+  }
   return (
-    <div className="bg-gray-700 text-white w-60 h-screen pt-10 pb-20">
+    <div className="bg-gray-700 text-white w-60 h-screen pt-10 pb-20 flex flex-col">
       <div className="flex justify-center items-center text-6xl">
         <ImProfile />
       </div>
@@ -24,6 +29,7 @@ const SideBar = () => {
           </NavLink>
         ))}
       </div>
+      <button className="mt-auto" onClick={handleLogout}>Log Out</button>
     </div>
   );
 };

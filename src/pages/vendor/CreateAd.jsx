@@ -36,7 +36,7 @@ const CreateAd = () => {
             <div>
               <label className="block mb-1 text-sm text-gray-600">Image:</label>
               <input
-                type="text"
+                type="file"
                 name="image"
                 placeholder="https://example.com/image.jpg"
                 className="border px-3 py-2 w-full rounded-xl text-sm "
