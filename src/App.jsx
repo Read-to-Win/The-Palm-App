@@ -46,10 +46,10 @@ function App() {
           path: "notifications",
           element: <Notifications />,
         },
-           {
-      path: "edit/:id",
-      element: <EditForm />,
-    },
+        {
+          path: "edit/:id",
+          element: <EditForm />,
+        },
       ],
     },
     {
@@ -64,14 +64,13 @@ function App() {
       path: "/venform",
       element: <VendorForm />,
     },
- 
+
     {
       path: "/edit",
       element: <EditForm />,
     },
 
-    { path: "/product/:id", 
-      element: <ProductDetails /> },
+    { path: "/product/:id", element: <ProductDetails /> },
 
     {
       path: "/categories",
@@ -81,7 +80,7 @@ function App() {
       path: "/products",
       element: <ProductsPage />,
     },
-
+    { path: "/products/:category", element: <BuyNow /> },
     { path: "/products/:category", 
       element: <BuyNow /> 
     },
@@ -90,7 +89,6 @@ function App() {
       path: "/ad-detail/:id",
       element: <ViewDetail />,
     },
-   
   ]);
 
   return <RouterProvider router={router} />;
