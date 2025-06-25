@@ -1,5 +1,8 @@
 import React from "react";
 import meetTeamPic from "../assets/Me.jpg";
+import meetTeamPic1 from "../assets/Precious.jpg";
+import meetTeamPic2 from "../assets/Abigail.jpg";
+
 const MeetTheTeam = () => {
   return (
     <section className="bg-gradient-to-br from-[#BAC166] via-[#A69D98] to-[#A82A5B] py-16 px-6 md:px-20 text-white">
@@ -29,7 +32,7 @@ const MeetTheTeam = () => {
         <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-md">
           <div className="w-32 h-32 mb-4">
             <img
-              src={meetTeamPic}
+              src={meetTeamPic2}
               alt="Abigail"
               className="w-full h-full rounded-full object-cover border-4 border-white shadow"
             />
@@ -42,7 +45,7 @@ const MeetTheTeam = () => {
         <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-md">
           <div className="w-32 h-32 mb-4">
             <img
-              src={meetTeamPic}
+              src={meetTeamPic1}
               alt="Precious"
               className="w-full h-full rounded-full object-cover border-4 border-white shadow"
             />
