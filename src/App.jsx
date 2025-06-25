@@ -10,7 +10,7 @@ import SignIn from "./pages/SignIn";
 import VendorForm from "./pages/VendorForm";
 import EditForm from "./pages/EditForm";
 import Notifications from "./pages/vendor/Notifications";
-
+import ViewDetail from "./pages/ViewDetail";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,8 +40,12 @@ function App() {
         },
         {
           path: "notifications",
-          element: <Notifications/>,
+          element: <Notifications />,
         },
+           {
+      path: "edit/:id",
+      element: <EditForm />,
+    },
       ],
     },
     {
@@ -54,11 +58,12 @@ function App() {
     },
     {
       path: "/venform",
-      element: <VendorForm/>
+      element: <VendorForm />,
     },
+ 
     {
-      path: "/edit",
-      element: <EditForm/>
+      path: "/ad-detail/:id",
+      element: <ViewDetail />,
     },
   ]);
 
