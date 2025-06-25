@@ -15,6 +15,7 @@ import PopularProducts from "./components/PopularProducts";
 import ProductsPage from "./pages/ProductsPage";
 import BuyNow from "./components/BuyNow";
 import ViewDetail from "./pages/ViewDetail";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -83,6 +84,9 @@ function App() {
 
     { path: "/products/:category", 
       element: <BuyNow /> 
+    },
+    
+    {
       path: "/ad-detail/:id",
       element: <ViewDetail />,
     },
