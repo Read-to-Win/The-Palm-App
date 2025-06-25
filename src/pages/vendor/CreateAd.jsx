@@ -1,22 +1,36 @@
+import { useForm } from "react-hook-form";
+import { apiCreateAdvert } from "../../services/adverts";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
+import { useState } from "react";
+
 const CreateAd = () => {
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    const payLoad = e.target;
-    const formData = {
-      title: payLoad.title.value,
-      image: payLoad.image.value,
-      category: payLoad.category.value,
-      price: payLoad.price.value,
-      location: payLoad.location.value,
-      description: payLoad.description.value,
-    };
-    console.log(formData);
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = async (data) => {
+    console.log(data);
+    const payload = new FormData();
+    payload.append("title", data.title);
+    payload.append("category", data.category);
+    payload.append("price", data.price);
+    payload.append("image", data.image[0]);
+setIsSubmitting(true)
+    try {
+      const response = await apiCreateAdvert(payload);
+      console.log(response.data);
+      toast.success("Product added successfully");
+      navigate("/dashboard/adverts");
+    } catch (error) {
+      console.log(error);
+    }finally{setIsSubmitting(false)}
   };
+
   return (
     <div className="flex h-screen bg-gray-50">
       <div className="flex items-center justify-center w-full">
         <form
-          onSubmit={onSubmitHandler}
+          onSubmit={handleSubmit(onSubmit)}
           className="bg-white p-6 w-full max-w-xl rounded-2xl shadow-2xl space-y-4"
         >
           <h2 className="text-xl font-semibold text-gray-700 mb-2">
@@ -27,7 +41,8 @@ const CreateAd = () => {
               <label className="block mb-1 text-sm text-gray-600">Title:</label>
               <input
                 type="text"
-                name="title"
+                id="title"
+                {...register("title", { required: "Title is required" })}
                 placeholder="e.g. Nike Air Max 2023"
                 className="border px-3 py-2 w-full rounded-xl text-sm "
               />
@@ -37,7 +52,8 @@ const CreateAd = () => {
               <label className="block mb-1 text-sm text-gray-600">Image:</label>
               <input
                 type="file"
-                name="image"
+                id="image"
+                {...register("image", { required: "Image Upload is required" })}
                 placeholder="https://example.com/image.jpg"
                 className="border px-3 py-2 w-full rounded-xl text-sm "
               />
@@ -48,7 +64,8 @@ const CreateAd = () => {
                 Category:
               </label>
               <select
-                name="category"
+                id="category"
+                {...register("category", { required: "Category is required" })}
                 className="border px-3 py-2 w-full rounded-xl text-sm "
               >
                 <option value="">Select a category</option>
@@ -63,21 +80,13 @@ const CreateAd = () => {
               <label className="block mb-1 text-sm text-gray-600">Price:</label>
               <input
                 type="number"
-                name="price"
+                {...register("price", { required: "Price is required" })}
+                id="price"
                 className="border px-3 py-2 w-full rounded-xl text-sm "
               />
             </div>
           </div>
-          <div>
-            <label className="block mb-1 text-sm text-gray-600">
-              Location:
-            </label>
-            <input
-              type="text"
-              name="location"
-              className="border px-3 py-2 w-full rounded-xl text-sm "
-            />
-          </div>
+
           <div>
             <label className="block mb-1 text-sm text-gray-600">
               Description:
@@ -85,6 +94,9 @@ const CreateAd = () => {
             <textarea
               name="description"
               rows="4"
+              {...register("description", {
+                required: "Description is required",
+              })}
               placeholder="Write a short description..."
               className="border px-3 py-2 w-full rounded-xl text-sm resize-none "
             ></textarea>
@@ -95,7 +107,7 @@ const CreateAd = () => {
               type="submit"
               className="bg-gray-600 text-white px-5 py-2 text-sm rounded-xl cursor-pointer"
             >
-              Post Ad
+              {isSubmitting ? "Posting Ad...": "Post Ad"}
             </button>
           </div>
         </form>

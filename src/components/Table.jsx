@@ -27,7 +27,7 @@ const Table = () => {
             <th className="text-left">Category</th>
             <th className="text-left">Price</th>
           </tr>
-          {adverts?.slice(0, 3)?.map((advert) => (
+          {adverts?.slice(0, 10)?.map((advert) => (
             <tr key={advert.id} className="">
               <td className="py-2">
                 <img

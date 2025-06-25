@@ -42,6 +42,10 @@ function App() {
           path: "notifications",
           element: <Notifications />,
         },
+           {
+      path: "edit/:id",
+      element: <EditForm />,
+    },
       ],
     },
     {
@@ -56,10 +60,7 @@ function App() {
       path: "/venform",
       element: <VendorForm />,
     },
-    {
-      path: "/edit/:id",
-      element: <EditForm />,
-    },
+ 
     {
       path: "/ad-detail/:id",
       element: <ViewDetail />,

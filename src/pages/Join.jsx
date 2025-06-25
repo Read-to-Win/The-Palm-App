@@ -37,23 +37,23 @@ const Join = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex h-screen">
+    <div className="flex bg-gray-400 h-screen p-10 items-center justify-center">
       {/* Image Section */}
-      <div className="w-1/2 h-full">
+      {/* <div className=" h-full">
         <img src={formImage} className="w-max h-full object-contain " />
-      </div>
+      </div> */}
 
       {/* Form Section */}
       <div className="w-1/2 h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-6 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white"
+          className="p-10 space-y-15 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">
               Create a new account
             </h2>
-            <p className="text-sm text-gray-500">
+            <p className="text-lg mt-10 text-gray-500">
               Already have an account?
               <span className="cursor-pointer underline font-bold text-blue-500">
                 <Link to="/sign-in">Sign in</Link>

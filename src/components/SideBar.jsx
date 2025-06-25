@@ -9,7 +9,7 @@ const SideBar = () => {
     navigate("/sign-in")
   }
   return (
-    <div className="bg-gray-950 text-white w-60 h-screen pt-10 pb-20 flex flex-col">
+    <div className="bg-gray-950 fixed text-white w-60 h-screen pt-10 pb-20 flex flex-col">
       <div className="flex justify-center items-center text-6xl">
         <ImProfile />
       </div>
