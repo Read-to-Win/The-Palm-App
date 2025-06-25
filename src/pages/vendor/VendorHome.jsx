@@ -2,7 +2,7 @@ import { MdInventory } from "react-icons/md";
 import StatCard from "../../components/StatCard";
 import { TbCash } from "react-icons/tb";
 import { IoCubeOutline } from "react-icons/io5";
-import Table from "../../components/table";
+import Table from "../../components/Table";
 
 const VendorHome = () => {
   return (
