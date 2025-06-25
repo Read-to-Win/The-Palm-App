@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import heroVideo from "../assets/heroVideo.mp4";
 import { IoIosSearch } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const partners = [
+    { name: "MEST", hoverColor: "hover:text-[#00BFA6]" },
+    { name: "Generation Gh", hoverColor: "hover:text-[#3B82F6]" },
+    { name: "BTL", hoverColor: "hover:text-[#22C55E]" },
+    { name: "PayPal", hoverColor: "hover:text-[#00457C]" },
+    { name: "MTN MoMo", hoverColor: "hover:text-[#FFD700]" },
+    { name: "GCB", hoverColor: "hover:text-[#F87171]" },
+  ];
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/products?search=${encodeURIComponent(searchTerm)}`);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") handleSearch();
+  };
+
   return (
     <div>
-      <div className="relative w-full h-screen overflow-hidden  bg-black/65">
+      <div className="relative w-full h-screen overflow-hidden bg-black/65">
         <video
           autoPlay
           muted
@@ -25,41 +48,49 @@ const Hero = () => {
             </h1>
           </div>
 
+          {/* Search Input */}
           <div className="relative w-full max-w-4xl mt-[50px]">
             <input
               type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyPress}
               placeholder="Search by category, price..."
               className="w-full px-4 py-4 pr-14 rounded-xl bg-white text-gray-800 outline-none"
             />
-            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black rounded p-2 hover:bg-gray-800 cursor-pointer">
+            <div
+              onClick={handleSearch}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black rounded p-2 hover:bg-gray-800 cursor-pointer"
+            >
               <IoIosSearch className="text-white text-lg" />
             </div>
           </div>
-          <div className="flex flex-row justify-start gap-x-10 items-center rounded-[10px] p-4 ml-[-15px] mt-[15px]">
-            <button className="border border-white text-white p-3 py-2 px-14 rounded-xl bg-[#2223208e] flex gap-x-2 items-center ">
-              Fashion <FaArrowRight />
-            </button>
-            <button className="border border-white text-white p-3 py-2 px-14 rounded-xl bg-[#2223208e] flex gap-x-2 items-center ">
-              FootWear <FaArrowRight />
-            </button>
-            <button className="border border-white text-white p-3 py-2 px-14 rounded-xl bg-[#2223208e] flex gap-x-2 items-center ">
-              Fragrance <FaArrowRight />
-            </button>
-            <button className="border border-white text-white p-3 py-2 px-14 rounded-xl bg-[#2223208e] flex gap-x-2 items-center ">
-              Tech <FaArrowRight />
-            </button>
+
+          {/* Category Buttons */}
+          <div className="flex flex-wrap gap-x-6 items-center p-4 ml-[-15px] mt-[15px]">
+            {["Fashion", "FootWear", "Fragrance", "Tech"].map((label) => (
+              <button
+                key={label}
+                onClick={() => navigate(`/products?search=${label}`)}
+                className="border border-white text-white p-3 py-2 px-10 rounded-xl bg-[#2223208e] flex gap-x-2 items-center hover:bg-white hover:text-black transition duration-300"
+              >
+                {label} <FaArrowRight />
+              </button>
+            ))}
           </div>
-        </div>
-        <div>
-          <ul className=" flex flex-row justify-start gap-x-10 items-center rounded-[10px] p-4 ml-[18px] mt-[20px] text-white text-[18px] font-semi-bold font-sans">
-            <li>Trusted by:</li>
-            <li>MEST</li>
-            <li>Generation Gh</li>
-            <li>BTL</li>
-            <li>PayPal</li>
-            <li>MTN MoMo</li>
-            <li>GCB</li>
-          </ul>
+
+          {/* Trusted By Section */}
+          <div className="flex flex-wrap items-center gap-x-6 text-white mt-[20px] font-medium text-lg">
+            <span className="text-white">Trusted by:</span>
+            {partners.map(({ name, hoverColor }) => (
+              <span
+                key={name}
+                className={`cursor-pointer transition duration-300 ${hoverColor}`}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -67,11 +98,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// const Hero = () => {
-//   return (
-//     <div className='hero'>Hero</div>
-//   )
-// }
-
-// export default Hero

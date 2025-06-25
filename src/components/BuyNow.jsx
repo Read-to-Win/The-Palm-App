@@ -1,39 +1,55 @@
-import buyNowVideo from "../assets/add.mp4";
+import { useNavigate } from "react-router-dom";
+import orderHere from "../assets/newOrderVid.mp4";
 
-const BuyNow = () => {
+const ShopNow = () => {
+  const navigate = useNavigate();
+
+  const handleShopNowClick = () => {
+    navigate("/products");
+  };
+
   return (
-    <div className="buyName grid grid-cols-2 text-white m-7 rounded-2xl ">
-      <div className="m-3">
-        <h2 className="font-bold text-[#F8240F] text-xl mb-5">Palm_Go.</h2>
-        <h1 className="text-4xl">Quality Products.</h1>
-        <h1 className="text-4xl mb-5">Instant Delivery </h1>
-        <p className="">
-          Discover the perfect blend of quality and speed. Our carefully
-          selected products are made to meet your highest standards, </p>
-          <p className="">and with
-          our instant delivery service, you'll have them in your hands in no
-          time. Whether you're shopping for essentials or something special,
-          we have got you covered—fast, reliable, and hassle-free.
+    <div className="grid grid-cols-1 md:grid-cols-2 m-7 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-green-50 via-blue-50 to-white">
+      <div className="text-[#1a1a1a] p-10 flex flex-col justify-center">
+        <h2 className="text-green-700 font-semibold text-lg tracking-widest uppercase mb-4">
+          Palm_Go.
+        </h2>
+        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">
+          Quality Products.
+        </h1>
+        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-5">
+          Instant Delivery.
+        </h1>
+        <p className="text-md text-gray-700 leading-relaxed mb-2">
+          Discover the perfect blend of{" "}
+          <span className="text-black font-medium">quality</span> and{" "}
+          <span className="text-black font-medium">speed</span>. Our carefully
+          curated items meet your highest standards.
+        </p>
+        <p className="text-md text-gray-700 leading-relaxed">
+          Get them in your hands in no time—fast, reliable, and hassle-free
+          shopping.
         </p>
         <button
-  className="bg-[#F8240F] text-white px-6 py-1 rounded-xl font-semibold mt-5 shadow-lg animate-bounce"
->
-  Buy Now
-</button>
-
+          onClick={handleShopNowClick}
+          className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-semibold mt-5 shadow-md transition duration-300 w-fit"
+        >
+          Shop Now
+        </button>
       </div>
-      <div>
-       <video className=""
-                 autoPlay
-                 muted
-                 loop
-                 playsInline
-                 src={buyNowVideo}
-                 
-        /> 
+
+      <div className="w-full h-auto aspect-video md:aspect-[4/3]">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          src={orderHere}
+        />
       </div>
     </div>
   );
 };
 
-export default BuyNow;
+export default ShopNow;

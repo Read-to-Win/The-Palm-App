@@ -1,27 +1,19 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { FaEye } from "react-icons/fa"; 
+import { Link, useNavigate } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 import Navbar from "./Navbar";
+import { apiFetchAdverts } from "../services/adverts";
 
 const Products = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
-  const handleClick = (id) => {
-    const product = products.find((product) => product.id === id);
-    navigate("/productdetail", { state: product });
-  };
-
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(
-        "https://advertisement-app-1-gy0x.onrender.com/api/useAdvert/adverts"
-      );
-      console.log(res.data.data);
-      setProducts(res.data.data);
+      const res = await apiFetchAdverts();
+      setProducts(res.data?.items || []);
     } catch (error) {
       console.error("Error fetching products:", error);
     } finally {
@@ -34,41 +26,48 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50 text-gray-800">
       <Navbar />
-      <div>
+
+      <div className="max-w-7xl mx-auto px-4 py-10">
+        <h1 className="text-3xl font-bold mb-8 text-center">Our Products</h1>
+
         {loading ? (
-          <div className="custom-spinner"></div>
+          <div className="text-center text-lg font-medium">Loading...</div>
+        ) : products.length === 0 ? (
+          <div className="text-center text-red-500">No products found.</div>
         ) : (
-          <h2 className="text-center text-xl font-bold my-4">Products</h2>
-        )}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="bg-emerald-100 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] p-8 text-center cursor-pointer hover:shadow-[0_0_0_1px_rgba(7,56,1,0.2)] hover:scale-105 transition-transform duration-200"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-80 rounded-lg mb-2 object-cover"
-              />
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-              <div className="flex justify-center gap-8 mt-3 text-gray-700">
-                <div className="relative group">
-                  <FaEye
-                    className="cursor-pointer text-3xl hover:text-blue-500 hover:scale-125 transition-transform duration-200"
-                    onClick={() => navigate(`/productdetail/${product.id}`)}
-                  />
-                  <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-                    View Product
-                  </span>
+          <div className=" grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {products.map((product) => (
+              <div
+                key={product._id}
+                className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition duration-300"
+              >
+                <img
+                  src={product.image?.url || "https://via.placeholder.com/300"}
+                  alt={product.title}
+                  className="w-full h-80 object-fill"
+                />
+                <div className="p-4 flex flex-col justify-between h-40">
+                  <h2 className="text-xl font-semibold truncate">{product.title}</h2>
+
+                  <div className="mt-auto flex justify-between items-center">
+                    <p className="text-lg font-bold text-green-600">${product.price}</p>
+
+                
+                    <Link
+                      to={`/product/${product._id}`}
+                      className="text-green-600 hover:text-green-800 transition flex items-center gap-1"
+                    >
+                      <FaEye className="text-xl" />
+                      <span className="text-sm">View</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
-              
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
