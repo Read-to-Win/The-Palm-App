@@ -37,7 +37,7 @@ const Join = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex bg-gray-400 h-screen p-10 items-center justify-center">
+    <div className="flex h-screen p-10 items-center justify-center">
       {/* Image Section */}
       {/* <div className=" h-full">
         <img src={formImage} className="w-max h-full object-contain " />
@@ -47,7 +47,7 @@ const Join = () => {
       <div className="w-1/2 h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-15 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
+          className="p-10 space-y-7 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">
@@ -114,8 +114,8 @@ const Join = () => {
             type="submit"
             disabled={isError}
             className={`${
-              isError ? "bg-gray-700 cursor-not-allowed" : "border-orange-500"
-            } text-gray-500 px-6 py-2 rounded-2xl border hover:bg-[#F2D5CF] transition`}
+              isError ? "bg-gray-700 cursor-not-allowed" : "border-green-500"
+            } text-gray-500 px-6 py-2 rounded-2xl border hover:text-black transition`}
           >
             {isSubmitting ? "Submitting..." : " Submit"}
           </button>

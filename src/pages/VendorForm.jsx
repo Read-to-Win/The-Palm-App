@@ -36,7 +36,7 @@ const VendorForm = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex bg-gray-400 p-10 items-center justify-center h-screen">
+    <div className="flex p-10 items-center justify-center h-screen">
       {/* Image Section */}
       {/* <div className="w-1/2 h-full">
         <img src={formImage} className="w-max h-full object-contain " />
@@ -52,14 +52,14 @@ const VendorForm = () => {
             <h2 className="text-2xl font-semibold mb-1">
               Create a new account
             </h2>
-            <p className="text-lg text-gray-500">
+            <p className="text-lg mt-8 text-gray-500">
               Already have an account?{" "}
               <span className="cursor-pointer underline font-bold text-blue-500">
                 <Link to="/sign-in">Sign in</Link>
               </span>
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-5">
             <div>
               <label className="block mb-1 text-sm cursor-pointer">
                 First Name:
@@ -124,19 +124,10 @@ const VendorForm = () => {
                 className="border px-3 py-2 w-full rounded-2xl"
               />
             </div>
-            <div>
-              <label className="block mb-1 text-sm cursor-pointer">
-                Address:
-              </label>
-              <input
-                type="text"
-                id="address"
-                className="border px-3 py-2 w-full rounded-2xl"
-              />
-            </div>
+          
 
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className=" block mb-1 text-sm cursor-pointer">
                 Password:
               </label>
               <input
@@ -163,8 +154,8 @@ const VendorForm = () => {
             type="submit"
             disabled={isError}
             className={`${
-              isError ? "bg-gray-700 cursor-not-allowed" : "border-orange-500"
-            } text-gray-500 px-6 py-2 rounded-2xl border hover:bg-[#F2D5CF] transition`}
+              isError ? "bg-gray-700 cursor-not-allowed" : "border-green-600"
+            } text-gray-500 px-6 py-2 rounded-2xl border cursor-pointer hover:text-black transition`}
           >
             {isSubmitting ? "Submitting..." : " Submit"}
           </button>

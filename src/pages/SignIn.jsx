@@ -42,7 +42,7 @@ const SignIn = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex bg-gray-400 h-screen items-center justify-center p-10">
+    <div className="flex h-screen items-center justify-center p-10">
       {/* Image Section */}
       {/* <div className=" h-full">
         <img src={formImage} className="w-max h-full object-contain " />
@@ -105,8 +105,8 @@ const SignIn = () => {
             type="submit"
             disabled={isError}
             className={`${
-              isError ? "bg-gray-700 cursor-not-allowed" : "border-orange-500"
-            } text-gray-500 px-6 py-2 rounded-2xl border hover:bg-[#F2D5CF] transition`}
+              isError ? "bg-gray-700 cursor-not-allowed" : "border-green-500"
+            } text-gray-500 px-6 py-2 rounded-2xl border hover:text-black transition`}
           >
             {isSubmitting ? "Submitting..." : " Submit"}
           </button>

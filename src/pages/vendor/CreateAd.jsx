@@ -105,7 +105,7 @@ setIsSubmitting(true)
           <div className="flex justify-end pt-2">
             <button
               type="submit"
-              className="bg-gray-600 text-white px-5 py-2 text-sm rounded-xl cursor-pointer"
+              className="bg-[#101828] text-white px-5 py-2 text-sm rounded-xl cursor-pointer"
             >
               {isSubmitting ? "Posting Ad...": "Post Ad"}
             </button>
