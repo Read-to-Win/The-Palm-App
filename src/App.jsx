@@ -10,8 +10,11 @@ import SignIn from "./pages/SignIn";
 import VendorForm from "./pages/VendorForm";
 import EditForm from "./pages/EditForm";
 import Notifications from "./pages/vendor/Notifications";
+import ProductDetails from "./pages/ProductDetails";
+import PopularProducts from "./components/PopularProducts";
+import ProductsPage from "./pages/ProductsPage";
+import BuyNow from "./components/BuyNow";
 import ViewDetail from "./pages/ViewDetail";
-
 function App() {
   const router = createBrowserRouter([
     {
@@ -62,9 +65,28 @@ function App() {
     },
  
     {
+      path: "/edit",
+      element: <EditForm />,
+    },
+
+    { path: "/product/:id", 
+      element: <ProductDetails /> },
+
+    {
+      path: "/categories",
+      element: <PopularProducts />,
+    },
+    {
+      path: "/products",
+      element: <ProductsPage />,
+    },
+
+    { path: "/products/:category", 
+      element: <BuyNow /> 
       path: "/ad-detail/:id",
       element: <ViewDetail />,
     },
+   
   ]);
 
   return <RouterProvider router={router} />;
