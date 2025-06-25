@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const Navbar = () => {
   return (
    <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg h-20 px-16 flex justify-between items-center">
-  <img src={logo} className="h-40" />
+  <Link to="/"><img src={logo} className="h-40" /></Link>
 
   <ul className="flex flex-row items-center gap-9 font-bold text-gray-500 cursor-pointer">
     {/* Dropdown */}
