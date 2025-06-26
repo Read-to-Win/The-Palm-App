@@ -1,7 +1,8 @@
 import React from "react";
-import meetTeamPic from "../assets/Me.jpg";
+import meetTeamPic from "../assets/Me1.jpg";
 import meetTeamPic1 from "../assets/Precious.jpg";
 import meetTeamPic2 from "../assets/Abigail.jpg";
+import meetTeamPic3 from "../assets/Joe.jpg";
 
 const MeetTheTeam = () => {
   return (
@@ -19,13 +20,14 @@ const MeetTheTeam = () => {
         <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-md">
           <div className="w-32 h-32 mb-4">
             <img
-              src={meetTeamPic}
+              src={meetTeamPic3}
               alt="Joseph"
               className="w-full h-full rounded-full object-cover border-4 border-white shadow"
             />
           </div>
           <h3 className="text-xl font-bold text-white">Joseph</h3>
-          <p className="text-sm text-[#e5e5e5]">Backend Developer</p>
+          <p className="text-sm text-[#e5e5e5] mb-1">Backend Developer</p>
+          <p className="text-xs text-gray-200">Built API endpoints & integrated backend logic</p>
         </div>
 
         {/* Abigail */}
@@ -38,7 +40,8 @@ const MeetTheTeam = () => {
             />
           </div>
           <h3 className="text-xl font-bold text-white">Abigail</h3>
-          <p className="text-sm text-[#e5e5e5]">Backend Developer</p>
+          <p className="text-sm text-[#e5e5e5] mb-1">Backend Developer</p>
+          <p className="text-xs text-gray-200">Managed data structures and user logic</p>
         </div>
 
         {/* Precious */}
@@ -51,7 +54,8 @@ const MeetTheTeam = () => {
             />
           </div>
           <h3 className="text-xl font-bold text-white">Precious</h3>
-          <p className="text-sm text-[#e5e5e5]">Frontend Developer</p>
+          <p className="text-sm text-[#e5e5e5] mb-1">Frontend Developer</p>
+          <p className="text-xs text-gray-200">Built out the forms and user inputs</p>
         </div>
 
         {/* Patience */}
@@ -64,7 +68,8 @@ const MeetTheTeam = () => {
             />
           </div>
           <h3 className="text-xl font-bold text-white">Patience</h3>
-          <p className="text-sm text-[#e5e5e5]">Frontend Developer</p>
+          <p className="text-sm text-[#e5e5e5] mb-1">Frontend Developer</p>
+          <p className="text-xs text-gray-200">Crafted the landing and product pages</p>
         </div>
       </div>
     </section>
