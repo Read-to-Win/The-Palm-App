@@ -47,15 +47,15 @@ const Join = () => {
       <div className="w-1/2 flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-7 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
+          className="p-10 space-y-7 w-4/5 rounded-2xl shadow-2xl bg-white h-full"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">
               Create a new account
             </h2>
-            <p className="text-lg mt-10 text-gray-500">
+            <p className="text-lg mt-5 text-gray-500">
               Already have an account?
-              <span className="cursor-pointer underline font-bold text-blue-500">
+              <span className="cursor-pointer underline font-bold ml-2 text-blue-500">
                 <Link to="/sign-in">Sign in</Link>
               </span>
             </p>

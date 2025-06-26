@@ -46,7 +46,7 @@ const VendorForm = () => {
       <div className=" w-1/2 h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-15 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white"
+          className="p-10 space-y-10 w-4/5 rounded-2xl shadow-2xl bg-white"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">

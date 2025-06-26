@@ -42,23 +42,23 @@ const SignIn = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex bg-gray-400 h-screen items-center justify-center p-10">
+    <div className="flex bg-white h-screen items-center justify-center p-10">
       {/* Image Section */}
       {/* <div className=" h-full">
         <img src={formImage} className="w-max h-full object-contain " />
       </div> */}
 
       {/* Form Section */}
-      <div className="w-1/2 h-full flex items-center justify-center">
+      <div className="w-1/2 flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-15 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
+          className="p-10 space-y-10 w-4/5 rounded-2xl shadow-2xl bg-white h-full"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">
               Sign in to your account
             </h2>
-            <p className="text-lg mt-10 text-gray-500">
+            <p className="text-lg mt-5 text-gray-500">
               New here?{" "}
               <span className="cursor-pointer underline font-bold text-blue-500">
                 <Link to="/join">Join</Link>
@@ -105,7 +105,7 @@ const SignIn = () => {
             type="submit"
             disabled={isError}
             className={`${
-              isError ? "bg-gray-700 cursor-not-allowed" : "border-orange-500"
+              isError ? "bg-gray-700 cursor-not-allowed" : "border-green-500"
             } text-gray-500 px-6 py-2 rounded-2xl border hover:bg-[#F2D5CF] transition`}
           >
             {isSubmitting ? "Submitting..." : " Submit"}
