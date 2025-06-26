@@ -25,7 +25,7 @@ const VendorForm = () => {
     try {
       const response = await apiSignUp(payload);
       console.log(response);
-      toast.success("User registered successfully.");
+      toast.success("Vendor registered successfully.");
       navigate("/sign-in");
     } catch (error) {
       console.log(error);
