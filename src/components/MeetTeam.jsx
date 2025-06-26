@@ -1,5 +1,5 @@
 import React from "react";
-import meetTeamPic from "../assets/Me1.jpg";
+import meetTeamPic from "../assets/Me.jpg";
 import meetTeamPic1 from "../assets/Precious.jpg";
 import meetTeamPic2 from "../assets/Abigail.jpg";
 import meetTeamPic3 from "../assets/Joe.jpg";
