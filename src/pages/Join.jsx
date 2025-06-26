@@ -37,38 +37,38 @@ const Join = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex bg-gray-400 h-screen p-10 items-center justify-center">
+    <div className="flex h-screen p-10 items-center justify-center">
       {/* Image Section */}
       {/* <div className=" h-full">
         <img src={formImage} className="w-max h-full object-contain " />
       </div> */}
 
       {/* Form Section */}
-      <div className="w-1/2 h-full flex items-center justify-center">
+      <div className="w-1/2 flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-15 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
+          className="p-10 space-y-7 w-4/5 rounded-2xl shadow-2xl bg-white h-full"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">
               Create a new account
             </h2>
-            <p className="text-lg mt-10 text-gray-500">
+            <p className="text-lg mt-5 text-gray-500">
               Already have an account?
-              <span className="cursor-pointer underline font-bold text-blue-500">
+              <span className="cursor-pointer underline font-bold ml-2 text-blue-500">
                 <Link to="/sign-in">Sign in</Link>
               </span>
             </p>
           </div>
 
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">
+            <label className="block mb-1 text-sm">
               Username:
             </label>
             <input
               type="text"
               id="username"
-              className="border px-3 py-2 w-full rounded-2xl"
+              className="border px-3 py-2 cursor-pointer w-full rounded-2xl"
               placeholder="e.g. Janedoe"
               {...register("username", { required: "Username is required" })}
             />
@@ -78,11 +78,11 @@ const Join = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">Email:</label>
+            <label className="block mb-1 text-sm">Email:</label>
             <input
               type="email"
               id="email"
-              className="border px-3 py-2 w-full rounded-2xl"
+              className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
               placeholder="e.g. preshy100@gmail.com"
               {...register("email", { required: "Email is required" })}
             />
@@ -91,13 +91,13 @@ const Join = () => {
             )}
           </div>
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">
+            <label className="block mb-1 text-sm">
               Password:
             </label>
             <input
               type="password"
               id="password"
-              className="border px-3 py-2 w-full rounded-2xl"
+              className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
               {...register("password", {
                 required: "Password is required",
                 minLength: {
@@ -114,8 +114,8 @@ const Join = () => {
             type="submit"
             disabled={isError}
             className={`${
-              isError ? "bg-gray-700 cursor-not-allowed" : "border-orange-500"
-            } text-gray-500 px-6 py-2 rounded-2xl border hover:bg-[#F2D5CF] transition`}
+              isError ? "bg-gray-700 cursor-not-allowed" : "border-green-500"
+            } text-gray-500 px-6 py-2 rounded-2xl border hover:text-black transition`}
           >
             {isSubmitting ? "Submitting..." : " Submit"}
           </button>

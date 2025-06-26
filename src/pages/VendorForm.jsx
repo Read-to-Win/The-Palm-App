@@ -36,7 +36,7 @@ const VendorForm = () => {
   };
   const isError = Object.keys(errors).length > 0;
   return (
-    <div className="flex bg-gray-400 p-10 items-center justify-center h-screen">
+    <div className="flex p-10 items-center justify-center h-screen">
       {/* Image Section */}
       {/* <div className="w-1/2 h-full">
         <img src={formImage} className="w-max h-full object-contain " />
@@ -46,20 +46,20 @@ const VendorForm = () => {
       <div className=" w-1/2 h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-10 space-y-15 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white"
+          className="p-10 space-y-10 w-4/5 rounded-2xl shadow-2xl bg-white"
         >
           <div>
             <h2 className="text-2xl font-semibold mb-1">
               Create a new account
             </h2>
-            <p className="text-lg text-gray-500">
+            <p className="text-lg mt-8 text-gray-500">
               Already have an account?{" "}
               <span className="cursor-pointer underline font-bold text-blue-500">
                 <Link to="/sign-in">Sign in</Link>
               </span>
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-5">
             <div>
               <label className="block mb-1 text-sm cursor-pointer">
                 First Name:
@@ -72,24 +72,24 @@ const VendorForm = () => {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className="block mb-1 text-sm">
                 Last Name:
               </label>
               <input
                 type="text"
                 id="last-name"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 cursor-pointer w-full rounded-2xl"
                 placeholder="e.g. Doe"
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className="block mb-1 text-sm">
                 Username:
               </label>
               <input
                 type="text"
                 name="name"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
                 {...register("username", { required: "Username is required" })}
               />
               {errors?.username && (
@@ -106,7 +106,7 @@ const VendorForm = () => {
               <input
                 type="email"
                 id="email"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
                 placeholder="e.g. preshy100@gmail.com"
                 {...register("email", { required: "Email is required" })}
               />
@@ -115,34 +115,25 @@ const VendorForm = () => {
               )}
             </div>
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className="block mb-1 text-sm">
                 Contact:
               </label>
               <input
                 type="number"
                 id="contact"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 cursor-pointer w-full rounded-2xl"
               />
             </div>
-            <div>
-              <label className="block mb-1 text-sm cursor-pointer">
-                Address:
-              </label>
-              <input
-                type="text"
-                id="address"
-                className="border px-3 py-2 w-full rounded-2xl"
-              />
-            </div>
+          
 
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className=" block mb-1 text-sm">
                 Password:
               </label>
               <input
                 type="password"
                 id="password"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -163,8 +154,8 @@ const VendorForm = () => {
             type="submit"
             disabled={isError}
             className={`${
-              isError ? "bg-gray-700 cursor-not-allowed" : "border-orange-500"
-            } text-gray-500 px-6 py-2 rounded-2xl border hover:bg-[#F2D5CF] transition`}
+              isError ? "bg-gray-700 cursor-not-allowed" : "border-green-600"
+            } text-gray-500 px-6 py-2 rounded-2xl border cursor-pointer hover:text-black transition`}
           >
             {isSubmitting ? "Submitting..." : " Submit"}
           </button>
