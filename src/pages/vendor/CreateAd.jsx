@@ -14,7 +14,7 @@ const CreateAd = () => {
     payload.append("title", data.title);
     payload.append("category", data.category);
     payload.append("price", data.price);
-    payload.append("image", data.image[0]);
+    payload.append("file", data.file[0]);
 setIsSubmitting(true)
     try {
       const response = await apiCreateAdvert(payload);
@@ -49,11 +49,11 @@ setIsSubmitting(true)
             </div>
 
             <div>
-              <label className="block mb-1 text-sm text-gray-600">Image:</label>
+              <label className="block mb-1 text-sm text-gray-600">File:</label>
               <input
                 type="file"
-                id="image"
-                {...register("image", { required: "Image Upload is required" })}
+                id="file"
+                {...register("file", { required: "Image File Upload is required" })}
                 placeholder="https://example.com/image.jpg"
                 className="border px-3 py-2 w-full rounded-xl text-sm "
               />

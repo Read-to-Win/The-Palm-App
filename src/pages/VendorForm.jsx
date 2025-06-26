@@ -72,24 +72,24 @@ const VendorForm = () => {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className="block mb-1 text-sm">
                 Last Name:
               </label>
               <input
                 type="text"
                 id="last-name"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 cursor-pointer w-full rounded-2xl"
                 placeholder="e.g. Doe"
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className="block mb-1 text-sm">
                 Username:
               </label>
               <input
                 type="text"
                 name="name"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
                 {...register("username", { required: "Username is required" })}
               />
               {errors?.username && (
@@ -106,7 +106,7 @@ const VendorForm = () => {
               <input
                 type="email"
                 id="email"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
                 placeholder="e.g. preshy100@gmail.com"
                 {...register("email", { required: "Email is required" })}
               />
@@ -115,25 +115,25 @@ const VendorForm = () => {
               )}
             </div>
             <div>
-              <label className="block mb-1 text-sm cursor-pointer">
+              <label className="block mb-1 text-sm">
                 Contact:
               </label>
               <input
                 type="number"
                 id="contact"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 cursor-pointer w-full rounded-2xl"
               />
             </div>
           
 
             <div>
-              <label className=" block mb-1 text-sm cursor-pointer">
+              <label className=" block mb-1 text-sm">
                 Password:
               </label>
               <input
                 type="password"
                 id="password"
-                className="border px-3 py-2 w-full rounded-2xl"
+                className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {

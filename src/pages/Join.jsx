@@ -44,7 +44,7 @@ const Join = () => {
       </div> */}
 
       {/* Form Section */}
-      <div className="w-1/2 h-full flex items-center justify-center">
+      <div className="w-1/2 flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="p-10 space-y-7 w-4/5 rounded-2xl shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-white h-full"
@@ -62,13 +62,13 @@ const Join = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">
+            <label className="block mb-1 text-sm">
               Username:
             </label>
             <input
               type="text"
               id="username"
-              className="border px-3 py-2 w-full rounded-2xl"
+              className="border px-3 py-2 cursor-pointer w-full rounded-2xl"
               placeholder="e.g. Janedoe"
               {...register("username", { required: "Username is required" })}
             />
@@ -78,11 +78,11 @@ const Join = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">Email:</label>
+            <label className="block mb-1 text-sm">Email:</label>
             <input
               type="email"
               id="email"
-              className="border px-3 py-2 w-full rounded-2xl"
+              className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
               placeholder="e.g. preshy100@gmail.com"
               {...register("email", { required: "Email is required" })}
             />
@@ -91,13 +91,13 @@ const Join = () => {
             )}
           </div>
           <div>
-            <label className="block mb-1 text-sm cursor-pointer">
+            <label className="block mb-1 text-sm">
               Password:
             </label>
             <input
               type="password"
               id="password"
-              className="border px-3 py-2 w-full rounded-2xl"
+              className="border px-3 py-2 w-full cursor-pointer rounded-2xl"
               {...register("password", {
                 required: "Password is required",
                 minLength: {
