@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from "react-router";
 import K from "../constants";
 import { ImProfile } from "react-icons/im";
+import { Link } from "react-router";
+
 
 const SideBar = () => {
   const navigate = useNavigate()
@@ -29,7 +31,7 @@ const SideBar = () => {
           </NavLink>
         ))}
       </div>
-      <button className="mt-auto" onClick={handleLogout}>Log Out</button>
+      <Link to= "/" className="mt-auto cursor-pointer border-2 p-3 text-[#364153] bg-white  rounded-md"><button  onClick={handleLogout}>Log Out</button></Link>
     </div>
   );
 };
